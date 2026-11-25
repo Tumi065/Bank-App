@@ -19,7 +19,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-/** Pop-up for opening a new Savings, Investment or Cheque account. */
+
 public class OpenAccountView {
 
     private final Customer customer;
@@ -53,7 +53,7 @@ public class OpenAccountView {
 
         Label message = Theme.messageLabel();
 
-        // Investment needs a minimum deposit, employer details are only for Cheque
+
         Runnable updateForType = () -> {
             String chosen = type.getValue();
             boolean cheque = "Cheque".equals(chosen);
