@@ -69,7 +69,7 @@ public class RegisterView {
 
         back.setOnAction(e -> new LoginView().start(stage));
 
-        // two columns so the form stays short
+       
         GridPane grid = new GridPane();
         grid.setHgap(14);
         grid.setVgap(14);
