@@ -264,3 +264,6 @@ public class Main {
         }
     }
 }
+/*Future Development Ideas 
+- Add a line of code that rejects entering an integer as a name .
+- Must add a line of code to return back if customer chooses to return at any time (even during registration).*/
