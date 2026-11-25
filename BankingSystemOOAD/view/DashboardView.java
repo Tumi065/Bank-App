@@ -312,7 +312,7 @@ public class DashboardView {
         return result.toUpperCase();
     }
 
-    // ----- small helpers -----
+
 
     private VBox statCard(String caption, Label value) {
         VBox box = new VBox(2, Theme.label(caption, "stat-label"), value);
