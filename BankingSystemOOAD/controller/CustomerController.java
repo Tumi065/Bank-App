@@ -6,7 +6,7 @@ import BankingSystemOOAD.model.Customer;
 
 public class CustomerController {
 
-    /** Creates and stores a new customer. Throws with a message to show on screen if something is wrong. */
+    //Creates,stores a new customer. Throws with a message to show on screen if something is wrong.//
     public Customer registerCustomer(
             String name,
             String address,
