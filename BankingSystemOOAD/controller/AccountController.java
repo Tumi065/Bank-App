@@ -13,7 +13,7 @@ public class AccountController {
 
     private static final double INVESTMENT_MINIMUM = 500.00;
 
-    /** Opens a Savings, Investment or Cheque account for the customer and returns it. */
+    //Opens a Savings, Investment or Cheque account for the customer then returns it//
     public Account openAccount(Customer customer, String type, String branch,
                                String depositText, String employerName, String employerAddress) {
 
@@ -60,7 +60,7 @@ public class AccountController {
         return account;
     }
 
-    /** Deposits into the account and returns the amount that was deposited. */
+    //Deposits into account and returns amount deposited.//
     public double deposit(Account account, String amountText, String note) {
         if (account == null) {
             throw new IllegalArgumentException("Please choose an account.");
@@ -71,7 +71,7 @@ public class AccountController {
         return amount;
     }
 
-    /** Withdraws from an Investment or Cheque account and returns the amount withdrawn. */
+    // Withdraws from Investment or Cheque account//
     public double withdraw(Account account, String amountText) {
         if (account == null) {
             throw new IllegalArgumentException("Please choose an account.");
@@ -97,7 +97,7 @@ public class AccountController {
         return amount;
     }
 
-    /** Pays interest into the account and returns the interest paid. */
+    //Pays interest and returns the interest paid. //
     public double payInterest(Account account) {
         if (account == null) {
             throw new IllegalArgumentException("Please choose an account.");
@@ -115,7 +115,6 @@ public class AccountController {
         return text == null ? "" : text.trim();
     }
 
-    /** Reads an amount typed by the user. An empty box counts as 0 only when allowEmpty is true. */
     private double parseAmount(String text, boolean allowEmpty) {
         String t = clean(text).replace(",", "");
         if (t.isEmpty()) {
