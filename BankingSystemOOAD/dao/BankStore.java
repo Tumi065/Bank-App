@@ -5,10 +5,7 @@ import BankingSystemOOAD.model.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Keeps the customers in memory while the program runs.
- * In Task 7 the DAO classes will replace this.
- */
+//Keeps the customers in memory while the program runs.//
 public class BankStore {
 
     private final List<Customer> customers = new ArrayList<>();
@@ -33,7 +30,7 @@ public class BankStore {
         return String.format("C%03d", customerCount);
     }
 
-    /** prefix is SAV, INV or CHQ, giving numbers like SAV-001 */
+    //prefix is SAV, INV or CHQ//
     public String nextAccountNumber(String prefix) {
         accountCount++;
         return String.format("%s-%03d", prefix, accountCount);
