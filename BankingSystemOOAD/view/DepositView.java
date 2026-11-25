@@ -20,7 +20,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
-/** Pop-up used for both Deposit and Withdraw. */
+
 public class DepositView {
 
     private final Customer customer;
