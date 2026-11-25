@@ -5,7 +5,7 @@ import BankingSystemOOAD.view.LoginView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-/** Run this class to start the banking app. It opens on the login screen. */
+//This class runs the login screen.//
 public class BankingGUI extends Application {
 
     @Override
