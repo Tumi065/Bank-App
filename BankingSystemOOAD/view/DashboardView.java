@@ -57,10 +57,8 @@ public class DashboardView {
     public void start(Stage stage) {
         this.stage = stage;
 
-        // ----- sidebar: who is logged in -----
         VBox sidebar = buildSidebar(stage);
 
-        // ----- page header -----
         VBox titles = new VBox(2,
                 Theme.label("Dashboard", "page-title"),
                 Theme.label("Welcome back, " + customer.getName(), "page-subtitle"));
@@ -73,7 +71,7 @@ public class DashboardView {
         HBox header = new HBox(titles, spacer, status);
         header.setAlignment(Pos.CENTER_LEFT);
 
-        // ----- summary cards -----
+    
         totalValue = Theme.label("", "stat-value-light");
         countValue = Theme.label("", "stat-value");
         Label idValue = Theme.label(customer.getCustomerId(), "stat-value");
@@ -90,7 +88,7 @@ public class DashboardView {
                 statCard("CUSTOMER ID", idValue)
         );
 
-        // ----- accounts table -----
+
         accountsTable = new TableView<>();
         accountsTable.setPlaceholder(new Label("No accounts yet - click Open Account"));
         accountsTable.setFixedCellSize(36);
@@ -106,7 +104,7 @@ public class DashboardView {
 
         VBox accountsCard = card("MY ACCOUNTS", accountsTable);
 
-        // ----- transactions table -----
+    
         transactionsTable = new TableView<>();
         transactionsTable.setPlaceholder(new Label("No transactions to show"));
         transactionsTable.setFixedCellSize(36);
@@ -118,7 +116,6 @@ public class DashboardView {
         addColumn(transactionsTable, "Amount", 0.22, t -> signedAmount(t));
         addColumn(transactionsTable, "Balance After", 0.24, t -> Theme.number(t.getBalanceAfter()));
 
-        // colour the type so deposits, withdrawals and interest are easy to tell apart
         typeColumn.setCellFactory(col -> new TableCell<Transaction, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -140,7 +137,6 @@ public class DashboardView {
         VBox.setVgrow(transactionsTable, Priority.ALWAYS);
         VBox.setVgrow(transactionsCard, Priority.ALWAYS);
 
-        // ----- buttons -----
         Button openAccount = new Button("Open Account");
         openAccount.getStyleClass().add("primary-button");
         Button deposit = new Button("Deposit");
@@ -200,7 +196,6 @@ public class DashboardView {
         Theme.show(stage, scene, "Customer Dashboard");
     }
 
-    // Deposit and Withdraw share one pop-up
     private void openMoneyDialog(boolean withdrawMode) {
         if (customer.getAccounts().isEmpty()) {
             Theme.showMessage(message, "Open an account first.", "error");
@@ -216,7 +211,6 @@ public class DashboardView {
                 }).start(popup);
     }
 
-    // Reloads both tables and the summary cards from the customer's accounts
     private void refresh() {
         Account selected = accountsTable.getSelectionModel().getSelectedItem();
         String keep = selected == null ? null : selected.getAccountNumber();
@@ -259,7 +253,6 @@ public class DashboardView {
         }
     }
 
-    // Left panel showing the customer who is logged in
     private VBox buildSidebar(Stage stage) {
         Circle circle = new Circle(38);
         circle.getStyleClass().add("avatar-circle");
