@@ -5,7 +5,7 @@ import BankingSystemOOAD.model.Customer;
 
 public class LoginController {
 
-    /** Returns the customer when the details are right, otherwise throws with a message to show on screen. */
+    // Returns correct customer details, otherwise throws with a message on screen. //
     public Customer login(String username, String password) {
         String user = username == null ? "" : username.trim();
         String pass = password == null ? "" : password;
