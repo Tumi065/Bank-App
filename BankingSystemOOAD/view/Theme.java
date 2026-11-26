@@ -92,7 +92,7 @@ public final class Theme {
             ".stat-label-light { -fx-text-fill: #dffaf5; -fx-font-size: 11px; -fx-font-weight: bold; }\n" +
             ".stat-value-light { -fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold; }\n" +
             ".brand-panel { -fx-background-color: linear-gradient(to bottom, #0a4f49, #0b6f65); }\n" +
-            ".brand-title { -fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold; }\n" +
+            ".brand-title { -fx-text-fill: white; -fx-font-size: 24px; -fx-text-alignment: center; -fx-font-weight: bold; }\n" +
             ".brand-text { -fx-text-fill: #d9fbf5; -fx-font-size: 14px; -fx-text-alignment: CENTER; }\n" +
             ".form-panel { -fx-background-color: white; }\n" +
             ".popup-header { -fx-background-color: linear-gradient(to right, #0a5f57, #0e8a7b); -fx-padding: 22 32 20 32; }\n" +
@@ -161,7 +161,9 @@ public final class Theme {
         Label text = label("Manage your accounts, deposits and interest in one place.", "brand-text");
         text.setWrapText(true);
 
-        VBox panel = new VBox(16, logo, label("Banking System", "brand-title"), text);
+        Label title = label("Banking System", "brand-title");
+        title.setWrapText(true);
+        VBox panel = new VBox(16, logo, title, text);
         panel.getStyleClass().add("brand-panel");
         panel.setAlignment(Pos.CENTER);
         panel.setPadding(new Insets(40));

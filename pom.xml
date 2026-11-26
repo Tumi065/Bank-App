@@ -3,37 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>bank</groupId>
     <artifactId>bank-app</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javafx.version>17.0.10</javafx.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
         </dependency>
-
-        <!-- SQLite driver for Task 7 (database). Not used by the screens yet. -->
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.45.1.0</version>
         </dependency>
     </dependencies>
-
     <build>
-        <!-- the BankingSystemOOAD folder sits in the project root, not in src/main/java -->
         <sourceDirectory>${project.basedir}</sourceDirectory>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -45,7 +37,6 @@
                     </includes>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -53,7 +44,6 @@
                 <configuration>
                     <mainClass>BankingSystemOOAD.BankingGUI</mainClass>
                     <options>
-                        <!-- software rendering so it works on the virtual screen in Codespaces -->
                         <option>-Dprism.order=sw</option>
                     </options>
                 </configuration>
